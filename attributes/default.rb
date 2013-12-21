@@ -17,7 +17,20 @@
 # limitations under the License.
 #
 
-default["readline"]["packages"] = %w(
-  libreadline6
-  readline-devel
-)
+case node["platform_family"]
+when "debian"
+  default["readline"]["packages"] = %w(
+    libreadline6
+    libreadline-dev
+  )
+when "ubuntu"
+  default["readline"]["packages"] = %w(
+    libreadline6
+    libreadline-dev
+  )
+when "suse"
+  default["readline"]["packages"] = %w(
+    libreadline6
+    readline-devel
+  )
+end
