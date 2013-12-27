@@ -17,20 +17,17 @@
 # limitations under the License.
 #
 
-case node["platform_family"]
-when "debian"
-  default["readline"]["packages"] = %w(
+default["readline"]["packages"] = value_for_platform_family(
+  "debian" => %w(
     libreadline6
     libreadline-dev
-  )
-when "ubuntu"
-  default["readline"]["packages"] = %w(
+  ),
+  "ubuntu" => %w(
     libreadline6
     libreadline-dev
-  )
-when "suse"
-  default["readline"]["packages"] = %w(
+  ),
+  "suse" => %w(
     libreadline6
     readline-devel
   )
-end
+)
