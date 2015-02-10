@@ -22,10 +22,6 @@ default["readline"]["packages"] = value_for_platform_family(
     libreadline6
     libreadline-dev
   ),
-  "ubuntu" => %w(
-    libreadline6
-    libreadline-dev
-  ),
   "suse" => %w(
     libreadline6
     readline-devel
